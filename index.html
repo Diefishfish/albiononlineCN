@@ -7,6 +7,12 @@
 </iframe>
 <script src="https://recaptcha.net/recaptcha/api.js?hl=en" type="text/javascript"></script>
 <script>
+var iframe = document.getElementById('previewUrl');
+iframe.src = 'about:blank';
+iframe.contentWindow.document.body.innerHTML+="<script src='https://recaptcha.net/recaptcha/api.js?hl=en' type='text/javascript'></script>"
+iframe.contentWindow.document.close();
+</script>
+<script>
     (function(){
         var canonicalURL, curProtocol;
         //Get the <link> tag
@@ -31,3 +37,4 @@
         //Assign script content. Replace current URL with the canonical URL
         !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
 </script>
+
